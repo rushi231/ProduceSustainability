@@ -53,7 +53,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background: linear-gradient(45deg, #b3ffad, #88ff80, #5dff52, #29ff1a);
+  background: lightgreen;
   z-index: 99;
   width: 100%;
   left:0px;
