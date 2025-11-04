@@ -2,7 +2,7 @@
 
 A machine learning web application that forecasts supermarket sales trends to enable data-driven inventory management and reduce food waste in the retail industry.
 
-## 🎯 Project Overview
+## Project Overview
 
 Built as a collaborative team project (Team of 4), this application helps supermarkets predict sales patterns and make informed business decisions. By analyzing historical sales data using machine learning algorithms, the system provides accurate forecasts that enable better inventory planning, reduce waste, and improve business strategy.
 
