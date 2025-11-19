@@ -20,7 +20,7 @@ Built as a collaborative team project (Team of 4), this application helps superm
 
 ### Machine Learning
 - **Python** - Model training and predictions
-- **Scikit-learn / TensorFlow** - ML frameworks (specify which you used)
+
 
 ## Features
 
