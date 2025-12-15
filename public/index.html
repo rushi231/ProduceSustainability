@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Predictor - ML Powered</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Sales Predictor</div>
+            <ul class="nav__links">
+                <li><a href="#app">Predictor</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>AI-Powered Sales Forecasting</h1>
+            <p class="hero-subtitle">Predict future sales using machine learning. Reduce waste, optimize inventory.</p>
+            <a class="button button-primary" href="#app">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enter Sales Data</h3>
+                    <p>Input your historical weekly sales numbers</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Train ML Model</h3>
+                    <p>Our algorithm learns patterns from your data</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Predictions</h3>
+                    <p>Receive accurate forecasts for upcoming weeks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MAIN APP SECTION -->
+    <section id="app">
+        <div class="app-wrapper">
+            <h2>Sales Prediction Tool</h2>
+            <p class="section-subtitle">Enter your weekly sales data to generate AI-powered forecasts</p>
+            
+            <div class="app-container">
+                <!-- Input Section -->
+                <div class='input-section'>
+                    <h3>Sales Data Input</h3>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Week</th>
+                                <th>Units Sold</th>
+                            </tr>
+                        </thead>
+                        <tbody class="data-labelling">
+                        </tbody>
+                    </table>
+                    
+                    <div class="button-group">
+                        <button class="button button-sm" onclick="addWeek()">Add Week</button>
+                        <button class="button button-sm button-secondary" onclick="removeWeek()">Remove Week</button>
+                    </div>
+
+                    <div class="prediction-settings">
+                        <label for="predWeeks">Predict how many weeks ahead?</label>
+                        <select id="predWeeks" class="select-field">
+                            <option value="2">2 weeks</option>
+                            <option value="4">4 weeks</option>
+                            <option value="6">6 weeks</option>
+                            <option value="8">8 weeks</option>
+                        </select>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="button button-primary button-large" onclick="updateChart()">
+                            Predict Sales
+                        </button>
+                        <button class="button button-outline" onclick="clearData()">Clear All</button>
+                    </div>
+
+                    <div id="error-message" class="error-message"></div>
+                    <div id="model-metrics" class="model-metrics"></div>
+                    <div id="prediction" class="prediction-output"></div>
+                </div>
+
+                <!-- Chart Section -->
+                <div class="chart-section">
+                    <h3>Sales Forecast</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with Machine Learning - Gradient Descent Algorithm - Polynomial Regression</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
