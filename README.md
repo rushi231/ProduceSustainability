@@ -4,11 +4,11 @@ A web application that uses machine learning to predict produce sales and help g
 
 ## Features
 
-- 📊 **Smart Predictions**: Uses polynomial regression to forecast future sales
-- 🎯 **Reduce Waste**: Helps stores order the right amount of produce
-- 📈 **Visual Analytics**: Interactive charts showing sales trends and predictions
-- 💾 **Data Storage**: PostgreSQL database for long-term trend analysis
-- ✨ **User-Friendly**: Simple interface for entering sales data
+- **Smart Predictions**: Uses polynomial regression to forecast future sales
+- **Reduce Waste**: Helps stores order the right amount of produce
+- **Visual Analytics**: Interactive charts showing sales trends and predictions
+- **Data Storage**: PostgreSQL database for long-term trend analysis
+- **User-Friendly**: Simple interface for entering sales data
 
 ## Tech Stack
 
@@ -111,63 +111,6 @@ http://localhost:3000
    - Review the chart showing actual vs predicted sales
    - Use predictions to optimize inventory ordering
 
-### API Endpoints
-
-#### Train ML Model
-```bash
-POST /pred
-Content-Type: application/json
-
-{
-  "data": {
-    "X": [[0,0,0], [1,1,1], [2,4,8]],
-    "y": [10, 12, 15]
-  }
-}
-```
-
-#### Save Sales Data
-```bash
-POST /save-sales
-Content-Type: application/json
-
-{
-  "storeName": "Fresh Mart",
-  "storeLocation": "Downtown",
-  "itemName": "Apples",
-  "quantitySold": 50,
-  "priceSold": 2.99
-}
-```
-
-#### Get Sales History
-```bash
-GET /sales-history?storeName=Fresh%20Mart&storeLocation=Downtown&itemName=Apples
-```
-
-#### Get Weekly Statistics
-```bash
-GET /weekly-stats?storeName=Fresh%20Mart&storeLocation=Downtown&daysBack=7
-```
-
-## Project Structure
-
-```
-produce-sustainability/
-├── server.js                 # Express server
-├── regression.js             # ML model implementation
-├── SupermarketService.js     # Database service layer
-├── db.js                     # Database connection
-├── knexfile.js              # Knex configuration
-├── package.json             # Dependencies
-├── knex/
-│   └── migrations/          # Database migrations
-└── public/
-    ├── index.html           # Main HTML file
-    ├── app.js               # Frontend JavaScript
-    ├── style.css            # Styles
-    └── pictures/            # Images
-```
 
 ## Machine Learning Model
 
@@ -186,80 +129,7 @@ The app uses **polynomial regression** with gradient descent:
 4. Trained model predicts future sales
 5. Predictions help optimize inventory ordering
 
-## Improvements Made
 
-### Code Quality
-- ✅ Fixed module export typo in `SupermarketService.js`
-- ✅ Added proper error handling throughout
-- ✅ Improved input validation
-- ✅ Added JSDoc comments
-- ✅ Used consistent `const/let` instead of `var`
-
-### Features
-- ✅ Add/remove week functionality
-- ✅ Clear all data button
-- ✅ Input validation with error messages
-- ✅ Improved chart styling
-- ✅ Store information form
-- ✅ Features showcase section
-- ✅ Better responsive design
-- ✅ Database integration
-
-### User Experience
-- ✅ Better visual feedback
-- ✅ Loading states
-- ✅ Error messages
-- ✅ Cleaner UI design
-- ✅ Mobile-responsive layout
-
-## Future Enhancements
-
-- 🔄 User authentication
-- 📧 Email notifications for low stock alerts
-- 📊 Multiple product tracking
-- 🤖 Advanced ML models (LSTM, Prophet)
-- 📱 Mobile app
-- 🌐 Multi-language support
-- 📈 More detailed analytics dashboard
-
-## Troubleshooting
-
-### Database Connection Issues
-```bash
-# Check if PostgreSQL is running
-sudo service postgresql status
-
-# Start PostgreSQL
-sudo service postgresql start
 ```
 
-### Port Already in Use
-Change the port in `server.js`:
-```javascript
-const PORT = process.env.PORT || 3001; // Change to 3001 or another port
-```
 
-### Migration Errors
-```bash
-# Rollback last migration
-npm run rollback
-
-# Run migrations again
-npm run migrate
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License - feel free to use this project for learning or commercial purposes.
-
-## Contact
-
-For questions or support, please open an issue on GitHub.
-
----
-
-**Happy predicting! Let's reduce food waste together! 🌱**
